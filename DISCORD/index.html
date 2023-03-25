@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,59 @@
     <title>Discord</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="./images/favicon.ico">
+
+    <style>
+        .reveal {
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: 1s all ease;
+        }
+
+        .reveal.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+    </script>
 </head>
-<body class="overflow-x-hidden"> 
+
+<body class="overflow-x-hidden">
     <!-- navbar -->
     <div class="bg-[#404EED] font-['ggSans']">
-        <nav class="text-white max-w-[1200px] container mx-auto flex justify-between h-[72px] items-center xl:px-0 px-7">
+        <nav
+            class="text-white max-w-[1200px] container mx-auto flex justify-between h-[72px] items-center xl:px-0 px-7">
             <div>
                 <img src="./images/logo.svg" alt="">
             </div>
 
             <div class="hidden xl:flex gap-8 font-['ggSans'] font-[600] text-[16px]">
-                <a href="#" class="capitalize hover:underline" >Download </a>
-                <a href="#" class="capitalize hover:underline" >Nitro</a>
-                <a href="#" class="capitalize hover:underline" >Discover</a>
-                <a href="#" class="capitalize hover:underline" >Safety</a>
-                <a href="#" class="capitalize hover:underline" >Support</a>
-                <a href="#" class="capitalize hover:underline" >Blog</a>
-                <a href="#" class="capitalize hover:underline" >Careers</a>
+                <a href="#" class="capitalize hover:underline">Download </a>
+                <a href="#" class="capitalize hover:underline">Nitro</a>
+                <a href="#" class="capitalize hover:underline">Discover</a>
+                <a href="#" class="capitalize hover:underline">Safety</a>
+                <a href="#" class="capitalize hover:underline">Support</a>
+                <a href="#" class="capitalize hover:underline">Blog</a>
+                <a href="#" class="capitalize hover:underline">Careers</a>
             </div>
 
             <div class="hidden xl:flex">
@@ -43,20 +80,24 @@
     <!-- hero section -->
     <div class="bg-[#404EED] -mt-1">
         <div class="w-[2600px] max-w-[1263px] container relative mx-auto">
-            
+
             <img src="./images/Image0.svg" alt="" class="hidden xl:block absolute z-10 bottom-0 top-auto">
             <img src="./images/Image1.svg" alt="" class="hidden xl:block absolute z-10 bottom-0 -right-[28%] ">
             <img src="./images/Image2.svg" alt="" class="hidden xl:block absolute z-10 bottom-0 -left-[31%] ">
-            
-            
 
-            <div class="text-white container max-w-[1200px] xl:max-w-[900px] mx-auto text-center xl:h-[555px] flex flex-col gap-5 pt-[50px] xl:pt-[120px]">
+
+
+            <div
+                class="text-white container max-w-[1200px] xl:max-w-[900px] mx-auto text-center xl:h-[555px] flex flex-col gap-5 pt-[50px] xl:pt-[120px]">
                 <h2 class="font-[800] text-left xl:text-center text-[34px] md:text-[56px] font-['GintoNord'] z-20">
                     IMAGINE A PLACE...
                 </h2>
 
-                <h4 class="font-[400] text-left xl:text-center text-[16px] md:text-[20px] leading-[26px] md:leading-[32.5px] font-['ggSans'] w-[90%] md:w-[70%] xl:w-[90%] z-20 xl:self-center" >
-                    ...where you can belong to a school club, a gaming group, or a worldwide art community. <br> Where just you and a handful of friends can spend time together. A place that makes it easy <br> to talk every day and hang out more often.
+                <h4
+                    class="font-[400] text-left xl:text-center text-[16px] md:text-[20px] leading-[26px] md:leading-[32.5px] font-['ggSans'] w-[90%] md:w-[70%] xl:w-[90%] z-20 xl:self-center">
+                    ...where you can belong to a school club, a gaming group, or a worldwide art community. <br> Where
+                    just you and a handful of friends can spend time together. A place that makes it easy <br> to talk
+                    every day and hang out more often.
                 </h4>
 
                 <div class="hidden xl:flex flex-row items-center justify-center gap-10 font-[500] z-20">
@@ -92,10 +133,107 @@
     </div>
 
     <!-- section 1 -->
-    <div class="flex container max-w-[1200px] mx-auto items-center py-14 md:py-36 flex-col md:flex-row md:px-0">
+    <div class="flex container max-w-[1200px] mx-auto items-center py-14 md:py-36 flex-col md:flex-row md:px-0 reveal">
+        <div class="md:w-[50%]">
+            <img src="./images/section1Image.svg" alt="">
+        </div>
 
+        <div class="md:w-[50%]">
+            <div class="w-[95%] xl:w-[60%] mx-auto">
+                <h1
+                    class="font-[700] text-[20px] sm:text-[28px] md:text-[48px] font-['ggSans'] leading-[24px] md:leading-[57.6px] mt-5 md:mt-0">
+                    Create an invite-only place where you belong
+                </h1>
+
+                <p class="font-['ggSans'] text-[16px] sm:text-[20px] font-[400] mt-[24px]">
+                    Discord servers are organized into topic-based channels where you can collaborate, share, and just
+                    talk about your day without clogging up a group chat.
+                </p>
+            </div>
+        </div>
     </div>
+
+    <!-- section 2 -->
+    <div class="bg-[#f6f6f6]">
+        <div class="flex container max-w-[1200px] mx-auto items-center py-14 md:py-36 flex-col md:flex-row md:px-0 reveal">
+
+            <div class="md:w-[50%]">
+                <div class="w-[95%] xl:w-[60%] mx-auto">
+                    <h1
+                        class="font-[700] text-[20px] sm:text-[28px] md:text-[48px] font-['ggSans'] leading-[24px] md:leading-[57.6px] mt-5 md:mt-0 ">
+                        Where hanging out is easy
+                    </h1>
+    
+                    <p class="font-['ggSans'] text-[16px] sm:text-[20px] font-[400] mt-[24px]">
+                        Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.
+                    </p>
+                </div>
+            </div>
+
+            <div class="md:w-[50%]">
+                <img src="./images/section2Image.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- section 3 -->
+    <div class="flex container max-w-[1200px] mx-auto items-center py-14 md:py-36 flex-col md:flex-row md:px-0 reveal">
+        <div class="md:w-[50%]">
+            <img src="./images/section3Image.svg" alt="">
+        </div>
+
+        <div class="md:w-[50%]">
+            <div class="w-[95%] xl:w-[60%] mx-auto">
+                <h1
+                    class="font-[700] text-[20px] sm:text-[28px] md:text-[48px] font-['ggSans'] leading-[24px] md:leading-[57.6px] mt-5 md:mt-0">
+                    From few to a fandom
+                </h1>
+
+                <p class="font-['ggSans'] text-[16px] sm:text-[20px] font-[400] mt-[24px]">
+                    Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 4 -->
+    <div class="bg-[#f6f6f6]">
+        <div class=" container max-w-[1200px] mx-auto items-center justify-center text-center py-14 md:py-36  md:flex-row md:px-0 reveal">
+
+            <h2 class="font-[700] text-center xl:text-center leading-[19px]  text-[15px] md:text-[40px] font-['GintoNord'] z-20 ">
+                RELIABLE TECH FOR STAYING CLOSE
+            </h2>
+
+            <p class="text-center justify-center font-['ggSans'] text-[26px] sm:text-[20px] font-[400] mt-[24px] leading-[26px]">
+                Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their <br> games, or gather up and have a drawing session with screen share.
+            </p>
+            
+            <img src="./images/section4Image.svg" alt="" class="w-[100%]">
+
+            <div class="text-[32px] font-['ggSans'] font-[700] relative w-[100%] flex flex-col items-center gap-[40px]">
+                <img src="./images/section5Image.svg" alt="" class="md:block hidden absolute top-0">
+                <div class="md:text-center pt-[30px] leading-[38px]">
+                    Ready to start your journey  
+                </div>
+            </div>
+            
+
+            <div class="hidden  xl:flex flex-row items-center justify-center gap-10 font-[500] z-20 mt-8">
+                <a href="#" class="bg-[#404EED] text-white p-3 px-7 rounded-full ">
+                    <p>
+                        <i class="fa-solid fa-download mr-2 text-white"></i>
+                        Download For Windows
+                    </p>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    
 
     <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
