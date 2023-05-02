@@ -21,36 +21,38 @@
         <div class="weather-container">
 
             <!-- grant location -->
-            <div class="grant-location-container">
+            <div class="sub-container grant-location-container">
                 <img src="location.png" alt="" width="80" height="80" loading="lazy">
                 <p>Grant Location Access</p>
                 <p>Allow Access to get weather informatiom</p>
-                <button class="btn" data-grantAccess>Grant Access</button>
+                <button class="btn"  data-grantAccess>Grant Access</button>
             </div>
 
             <!-- search screen -->
             <form class="form-container" data-searchForm>
                 <input placeholder="Search any city..." data-searchInput>
-                <button class="btn">
+                <button class="btn" type="submit">
                     <img src="search.png" alt="" width="20" height="20" loading="lazy">
                 </button>
             </form>
 
             <!-- loading screen -->
-            <div class="loading-container">
+            <div class="sub-container loading-container">
                 <img src="loading.gif" alt="" width="150" height="150" loading="lazy">
-                <p>loading...</p>
+                <p>loading</p>
             </div>
 
-            <div class="user-info-container">
+            <!-- weather info -->
+            <div class="sub-container user-info-container">
+
                 <div class="name">
                     <p data-cityName></p>
-                    <img data-countryIcon>
+                    <img data-countryIcon >
                 </div>
 
                 <p data-weatherDes></p>
                 <img data-weatherIcon>
-                <p data-temp>^C</p>
+                <p data-temp></p>
 
                 <div class="parameter-container">
 
