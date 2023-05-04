@@ -17,6 +17,7 @@ function initGame(){
     boxes.forEach((box,index)=>{
         box.innerText = "";
         box.classList.remove("win")
+        box.style.pointerEvents = "all";
     })
     btn.classList.remove("active")
     gameInfo.innerText = `Current Player - ${currentPlayer}`
@@ -49,8 +50,7 @@ function swapTurn(){
 }
 
 function checkGameOver(){
-    let answer = "";
-
+    let bool = false;
     winningPos.forEach((position)=>{
         if(( gameGrid[position[0]]!=="" || gameGrid[position[1]]!=="" || gameGrid[position[2]]!=="") 
         && (gameGrid[position[0]] === gameGrid[position[1]]) && (gameGrid[position[1]]===gameGrid[position[2]]) ){
@@ -66,19 +66,21 @@ function checkGameOver(){
             boxes[position[1]].classList.add("win")
             boxes[position[2]].classList.add("win")
             btn.classList.add("active")
-        }
-        else if(count >= 9){
-            gameInfo.innerText = `NO RESULT`;
-            btn.classList.add("active")
+
+            boxes.forEach((box)=>{
+                box.style.pointerEvents = "none";
+            })
+
+            bool = true;
         }
     })
-    
-    // boxes.forEach((box)=>{
-    //     box.removeEventListener('click',handleClick(index) , false)
-    // })
 
+    if(count == 9 && bool==false){
+        gameInfo.innerText = `NO RESULT`;
+        btn.classList.add("active")
+        
+    }
 }
-
 
 btn.addEventListener('click',() =>{
     if(btn.classList.contains("active")){
